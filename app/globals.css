@@ -319,3 +319,71 @@
 .spotlight:hover::before {
   opacity: 1;
 }
+
+/* =========================
+   PREMIUM MOVING NEBULA FX
+========================= */
+
+.nebula-bg{
+background:
+radial-gradient(circle at 18% 28%, rgba(0,255,255,.14), transparent 35%),
+radial-gradient(circle at 78% 35%, rgba(0,120,255,.15), transparent 35%),
+radial-gradient(circle at 52% 82%, rgba(139,92,246,.12), transparent 35%),
+linear-gradient(135deg,#020617,#000000);
+background-size:300% 300%;
+animation:nebulaMove 18s ease infinite;
+}
+
+@keyframes nebulaMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.cyber-grid{
+background-image:
+linear-gradient(rgba(0,255,255,.05) 1px, transparent 1px),
+linear-gradient(90deg, rgba(0,255,255,.05) 1px, transparent 1px);
+background-size:60px 60px;
+}
+
+.stars{
+position:absolute;
+inset:0;
+pointer-events:none;
+background-image:
+radial-gradient(2px 2px at 20% 30%, white, transparent),
+radial-gradient(2px 2px at 70% 50%, white, transparent),
+radial-gradient(2px 2px at 35% 75%, white, transparent),
+radial-gradient(2px 2px at 85% 20%, white, transparent);
+opacity:.35;
+animation:twinkle 6s infinite alternate;
+}
+
+@keyframes twinkle{
+from{opacity:.15;}
+to{opacity:.45;}
+}
+
+/* optional extra aurora sweep */
+.aurora-sweep{
+position:absolute;
+inset:-20%;
+background:
+conic-gradient(
+from 90deg,
+transparent,
+rgba(0,255,255,.04),
+transparent,
+rgba(139,92,246,.05),
+transparent
+);
+filter: blur(70px);
+animation:auroraSpin 24s linear infinite;
+pointer-events:none;
+}
+
+@keyframes auroraSpin{
+from{transform:rotate(0deg) scale(1);}
+to{transform:rotate(360deg) scale(1.1);}
+}
